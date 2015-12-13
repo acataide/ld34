@@ -86,13 +86,28 @@ header p {
   background-repeat: no-repeat;
 }
 
+
 .VH_tissue{
   background-image: url("img/very_hard_tissue.png");
 }
+.VH_tissue1{
+  background-image: url("img/very_hard_tissue.png");
+  opacity: 0.5;
+}
+.VH_tissue2{
+  background-image: url("img/very_hard_tissue.png");
+  opacity: 0.2;
+}
+
 
 .H_tissue{
   background-image: url("img/hard_tissue.png");
 }
+.H_tissue1{
+  background-image: url("img/hard_tissue.png");
+  opacity: 0.5;
+}
+
 
 .S_tissue{
   background-image: url("img/soft_tissue.png");
@@ -125,4 +140,8 @@ header p {
 
 .cancer {
   background-image: url("img/cancer.png");
+}
+
+.hilite {
+background-color:red;
 }
