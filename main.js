@@ -32,20 +32,68 @@ $(function(){
   //Initialize Areas
   $(".show").each(function (index,item){
     var tissues = ["VH_tissue","S_tissue","H_tissue"];
-    var tissue = tissues[Math.round(Math.random()*2)];
+    var tissue = tissues[Math.round(Math.random()*2)];  
+    
     $(item).append("<div class='tissue "+tissue+"'></div>");
+    $(item).append("<div class='cell'></div>");
   })
-
-
+  
+  //Setup Turn Button
+  $("#turn").on("click", turnClick);
+  
+  // Set moment to first
+  moment = "first";
+  updateMsg("first");
   
 })
 
 // Treats click on the board
-
 function boardClick (e) {
-  console.log("Clicked board:",$(e.srcElement).parent().attr("id"));
+  if (moment == "first") {
+    var c = $(this).find(".cell")
+    c.attr("class", "cell stem_cell");
+    c.text("0");
+    moment = "player";
+    updateMsg("first_01");
+  }
+  
 }
 
+function turnClick (e) {
+  if (moment=="player") {
+    endTurn();
+  }
+}
+
+//End player turn
+function endTurn() {
+    
+  //GROW CANCER !!!!!!
+  //First malignant cell
+  if ($(".cancer").length == 0) {
+    var item = Math.round(Math.random() * $(".S_tissue").length);
+    var elem = $($(".S_tissue")[item])
+    elem.attr("class","tissue cancer");
+    elem.text("0");
+  } else {
+    //keep growing
+    $(".cancer").each(function(index, item){
+      $(item).text(parseInt($(item).text())+1);
+    })
+  }
+
+  $(".stem_cell").each(function(index, item){
+     var is_hard = $(item).parent().find(".VH_tissue").length;
+     if (is_hard) {
+       $(item).text(parseInt($(item).text())+1);
+     }
+  })
+}
+
+// Updates Help Message
+function updateMsg(id) {
+  $("#inst").html($("#messages #"+id).html());
+};
 
 // Return hexagon distance from center
 function fromCenter(row, col) {

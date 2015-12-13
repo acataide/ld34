@@ -15,13 +15,21 @@
 
 
   <header>
+    <div id="turn"></div>
     <h1>Neoplasia</h1>
     <p>--The Game--</p>
   </header>
     <div id="board_container">
       <div id="board"></div>
     </div>
-  <div id="inst"><p>Instruções do Jogo</p></div> 
+  <div id="inst"></div> 
+  
+  <div id="messages" style="display:none;">
+    <div id="first"><p>Click on the board to add your first Stem Cell. <strong>Important:</strong> Stem Cells need to be inside bone tissue to reproduce.</p>
+    </div>
+    <div id="first_01"><p>The arrow button on the top left will end your turn. Your cells will receive more ATP, but so will cancerous cells.</p>
+    </div>
+  </div>
   
   <script src="lib/zepto.min.js"></script>
   <script src="main.js"></script>

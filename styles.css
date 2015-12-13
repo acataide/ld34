@@ -1,17 +1,34 @@
 body {
   background-color: #444;
   color: #FFF;
-  margin:0;
 }
 
 header {
   position:absolute;
   background: #333;
-  text-align: center;
   top: 0;
   left: 0;
   right: 0;
   height: 15%;
+  padding-left: 2em;
+}
+
+header #turn {
+  float: right;
+  width: 15vmin;
+  height: 100%;
+  background-image: url("img/end_turn.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 1em;
+}
+
+h1 {
+  margin: 0.5em 0 0 0;
+}
+
+header p {
+  margin:0;
 }
 
 #inst {
@@ -25,8 +42,12 @@ header {
 }
 
 #board_container {
-  width: 600px;
-  height: 600px;
+  width: 85vmin; height: 85vmin;
+  position: absolute;
+  top:10%;bottom:5%;
+  left:0;right:0;
+  margin: auto;
+  overflow:hidden;
 }
 
 #board {
@@ -59,9 +80,8 @@ header {
 }
 
 .tissue {
-  position:relative;
-  width: 100%;
-  height: 100%;
+  width: 100%;  height: 100%;
+  margin-bottom: -100%;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -76,4 +96,33 @@ header {
 
 .S_tissue{
   background-image: url("img/soft_tissue.png");
+}
+
+.cell {
+  width: 70%; height: 70%;
+  margin-bottom: -100%;
+  margin-top:9%;
+  margin-left:15%;
+  background-size: contain;
+  background-repeat: no-repeat; 
+}
+
+.stem_cell{
+  background-image: url("img/stem_cell.png");
+}
+
+.T_cell{
+  background-image: url("img/T_cell.png");
+}
+
+.B_cell{
+  background-image: url("img/B_cell.png");
+}
+
+.NK_cell{
+  background-image: url("img/NK_cell.png");
+}
+
+.cancer {
+  background-image: url("img/cancer.png");
 }
